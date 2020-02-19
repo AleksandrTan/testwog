@@ -11,5 +11,3 @@ base_url_api = 'https://ng-dating-test.webmonstr.com/'
 tests_dict = {
     'logintest': {'class_name': LoginTest(), 'request_url': 'api-token-auth/'}
 }
-
-a = 0

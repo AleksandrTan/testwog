@@ -12,8 +12,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
             test_object = settings.tests_dict[options['testname']]['class_name']
-            print(test_object.get_baseurl())
             print(test_object.get_request_url())
+            test_object.run_test()
         except KeyError:
             print('Wrong test name!!!')
         self.stdout.write(self.style.SUCCESS('Successfully closed poll "%s"' % settings.a))
