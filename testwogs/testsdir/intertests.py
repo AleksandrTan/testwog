@@ -12,9 +12,12 @@ class BaseTests(metaclass=ABCMeta):
     def __init__(self):
         self.base_url = settings.base_url_api
 
+    def run_test(self):
+        pass
+
     def get_baseurl(self):
         return self.base_url
 
     @abstractmethod
-    def make_request(self):
+    def get_request_url(self):
         pass
