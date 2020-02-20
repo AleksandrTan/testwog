@@ -1,5 +1,6 @@
 """"
 FavoritesTest class
+Pre-receives the user token
 """
 import requests
 import json

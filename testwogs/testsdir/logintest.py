@@ -18,7 +18,7 @@ class LoginTest(BaseTests):
         Runs the test, returns the token on success
     """
     def run_test(self):
-        data_request = {'username': 1, 'password': self.userpassword}
+        data_request = {'username': settings.USER_NAME, 'password': self.userpassword}
         data = json.dumps(data_request)
         rec = requests.post(self.get_request_url(), data, headers={'Content-Type': 'application/json'})
         if rec.status_code == 200:

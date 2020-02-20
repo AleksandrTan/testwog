@@ -27,7 +27,12 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS('The program is completed!'))
 
     def run_all_tests(self):
-        print(1000)
+        try:
+            for name in settings.TESTS_DICT:
+                test_object = settings.TESTS_DICT[name]['class_name']
+                test_object.run_test()
+        except KeyError as key:
+            print(f'Wrong test name - {key}!!!')
 
     def show_all_tests(self):
         for test in settings.TESTS_DICT:
