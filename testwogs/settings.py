@@ -22,5 +22,3 @@ TESTS_DICT = {
     'logouttest': {'class_name': LogoutTest(), 'request_url': 'logout/', 'method': 'get'},
     'favoritestest': {'class_name': FavoritesTest(), 'request_url': 'account/favorites', 'method': 'get'}
 }
-
-token = "0807261049ea7033a702e13ae47ff262da91addc",

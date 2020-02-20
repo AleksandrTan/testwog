@@ -12,8 +12,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
             test_object = settings.TESTS_DICT[options['testname']]['class_name']
-            print(options)
             test_object.run_test()
-        except KeyError as f:
-            print('Wrong test name!!!', f)
-        self.stdout.write(self.style.SUCCESS('Successfully closed poll'))
+        except KeyError as key:
+            print(f'Wrong test name - {key}!!!')
+        self.stdout.write(self.style.SUCCESS('Ok'))
