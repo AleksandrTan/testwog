@@ -19,11 +19,16 @@ class LogoutTest(BaseTests):
             data_json = rec.json()
             self.save_data_test(rec.status_code, self.request_url, message=data_json['message'],
                                 api_status=data_json['status'])
+
+            # information output to the console
             print('=' * 50)
             print(f'URL_REQUEST - {self.request_url}\nLogoutTest completion status - {rec.status_code} - Ok')
             print('=' * 50)
         else:
+            # save data in DB
             self.save_data_test(rec.status_code, self.request_url, test_status='no successfully', api_status=1)
+
+            # information output to the console
             print('=' * 50)
             print(f'Something is wrong.\nURL_REQUEST - {self.request_url}\n'
                   f'LogoutTest completion status - {rec.status_code}')

@@ -18,12 +18,14 @@ class LoginTest(BaseTests):
         Runs the test, returns the token on success
     """
     def run_test(self):
-        data_request = {'username': self.username, 'password': self.userpassword}
+        data_request = {'username': 1, 'password': self.userpassword}
         data = json.dumps(data_request)
         rec = requests.post(self.get_request_url(), data, headers={'Content-Type': 'application/json'})
         if rec.status_code == 200:
             # save data in DB
             self.save_data_test(rec.status_code, self.request_url)
+
+            #information output to the console
             print('=' * 50)
             print(f'URL_REQUEST - {self.request_url}\nLogintest completion status - {rec.status_code} - Ok')
             print('=' * 50)
@@ -31,6 +33,8 @@ class LoginTest(BaseTests):
         else:
             # save data in DB
             self.save_data_test(rec.status_code, self.request_url, test_status='no successfully', api_status=1)
+
+            # information output to the console
             print('=' * 50)
             print(f'Something is wrong.\nURL_REQUEST - {self.request_url}\nTest completion status - {rec.status_code}')
             print('=' * 50)

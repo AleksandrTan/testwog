@@ -14,7 +14,9 @@ class BaseTests(metaclass=ABCMeta):
     @abstractmethod
     def get_request_url(self) -> str:
         pass
-
+    """
+        Save data in DB
+    """
     @abstractmethod
     def save_data_test(self, server_status, url_request, test_status='successfully',
                        message='No Message', api_status=0):
