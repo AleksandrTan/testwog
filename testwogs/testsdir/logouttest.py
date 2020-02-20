@@ -13,7 +13,10 @@ class LogoutTest(BaseTests):
 
     def run_test(self):
         rec = requests.get(self.get_request_url(), headers={'Content-Type': 'application/json'})
-        print(f'Test completion status - {rec.status_code}')
+        if rec.status_code == 200:
+            print(f'LogoutTest completion status - {rec.status_code}')
+        else:
+            print(f'Something is wrong.\nLogoutTest completion status - {rec.status_code}')
 
     def get_request_url(self):
         return f"{self.base_url}{self.request_url}"

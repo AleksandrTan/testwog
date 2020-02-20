@@ -22,7 +22,10 @@ class FavoritesTest(BaseTests):
         if token:
             rec = requests.get(self.get_request_url(), data, headers={'Content-Type': 'application/json',
                                                                       'Authorization': 'Token ' + token})
-            print(rec.text, rec.status_code, 99999)
+            if rec.status_code == 200:
+                print(f'FavoritesTest completion status - {rec.status_code}')
+            else:
+                print(f'Something is wrong!!!\nFavoritesTest completion status - {rec.status_code}')
         else:
             print("Text message - Authentication credentials were not provided.")
 

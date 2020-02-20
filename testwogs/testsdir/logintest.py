@@ -21,7 +21,7 @@ class LoginTest(BaseTests):
         data = json.dumps(data_request)
         rec = requests.post(self.get_request_url(), data, headers={'Content-Type': 'application/json'})
         if rec.status_code == 200:
-            print(f'Test completion status - {rec.status_code}')
+            print(f'Logintest completion status - {rec.status_code}')
             return rec.json()['token']
         else:
             print(f'Something is wrong.\nTest completion status - {rec.status_code}')
