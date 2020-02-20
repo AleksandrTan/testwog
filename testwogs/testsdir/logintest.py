@@ -5,6 +5,7 @@ import requests
 import json
 from testwogs.testsdir.intertests import BaseTests
 from testwogs import settings
+from testwogs.models import Logserver
 
 
 class LoginTest(BaseTests):
@@ -21,11 +22,23 @@ class LoginTest(BaseTests):
         data = json.dumps(data_request)
         rec = requests.post(self.get_request_url(), data, headers={'Content-Type': 'application/json'})
         if rec.status_code == 200:
-            print(f'Logintest completion status - {rec.status_code}')
+            # save data in DB
+            self.save_data_test(rec.status_code, self.request_url)
+            print('=' * 50)
+            print(f'URL_REQUEST - {self.request_url}\nLogintest completion status - {rec.status_code} - Ok')
+            print('=' * 50)
             return rec.json()['token']
         else:
-            print(f'Something is wrong.\nTest completion status - {rec.status_code}')
+            # save data in DB
+            self.save_data_test(rec.status_code, self.request_url, test_status='no successfully', api_status=1)
+            print('=' * 50)
+            print(f'Something is wrong.\nURL_REQUEST - {self.request_url}\nTest completion status - {rec.status_code}')
+            print('=' * 50)
             return False
 
     def get_request_url(self) -> str:
         return f"{self.base_url}{self.request_url}"
+
+    def save_data_test(self, server_status, url_request, test_status='successfully', message='', api_status=0):
+        data_record = Logserver.objects.save_new_record(server_status, url_request, test_status, message, api_status)
+        return data_record

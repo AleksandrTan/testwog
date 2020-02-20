@@ -16,14 +16,14 @@
 ##Порядок работы:
 Приложение для тестирования API запускается через консоль Django с использованием manage.py
 
-Команда - manage.py runtest <аргумент>
+Команда - _**manage.py runtest <аргумент>**_
 
 Аргументы команды:
 
-1. manage.py runtest help - выводит список аргументов для команды и их описание
+1. _**manage.py runtest help**_ - выводит список аргументов для команды и их описание
 
-2. manage.py runtest showtests - список всех тестов
+2. _**manage.py runtest showtests**_ - список всех тестов
 
-3.manage.py runtest <test_name> - запускае указанный тест
+3. **_manage.py runtest <test_name>_** - запускае указанный тест
 
-4.manage.py runtest runall - запускает все зарегистрированные тесты
+4. _**manage.py runtest runall**_ - запускает все зарегистрированные тесты

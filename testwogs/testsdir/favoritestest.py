@@ -23,9 +23,12 @@ class FavoritesTest(BaseTests):
             rec = requests.get(self.get_request_url(), data, headers={'Content-Type': 'application/json',
                                                                       'Authorization': 'Token ' + token})
             if rec.status_code == 200:
-                print(f'FavoritesTest completion status - {rec.status_code}')
+                print('=' * 50)
+                print(f'URL_REQUEST - {self.request_url}\nFavoritesTest completion status - {rec.status_code} - Ok')
+                print('=' * 50)
             else:
-                print(f'Something is wrong!!!\nFavoritesTest completion status - {rec.status_code}')
+                print(f'URL_REQUEST - {self.request_url}\n'
+                      f'Something is wrong!!!\nFavoritesTest completion status - {rec.status_code}')
         else:
             print("Text message - Authentication credentials were not provided.")
 
@@ -35,3 +38,6 @@ class FavoritesTest(BaseTests):
     def get_token_user(self):
         login_object = LoginTest()
         return login_object.run_test()
+
+    def save_data_test(self):
+        pass
