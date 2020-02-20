@@ -24,9 +24,13 @@ manage.py runtest <test_name> - запускае указанный тест
 manage.py runtest runall - запускает все зарегистрированные тесты
 
 Аккаунт пользователя:
+
 login - admin
+
 password - admin
 
 Аккаунт для Django amin:
+
 login - AlexTan
+
 password - 1234567
