@@ -29,7 +29,7 @@ login - admin
 
 password - admin
 
-Аккаунт для Django amin:
+Аккаунт для Django admin:
 
 login - AlexTan
 
