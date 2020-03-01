@@ -1,29 +1,36 @@
-#Приложение для тестирования REST API.
+Приложение для тестирования REST API.
+Стек:
 
-##Стек:
-1. Python  - 3.7.2
+Python - 3.7.2
 
-2. Django 3.0.3
+Django 3.0.3
 
-3. DataBase - Sqlite
+DataBase - Sqlite
 
-##Структура приложения(testwogs):
- 
-1. settings.py - файл настроек
+Порядок работы:
 
-2. 
-
-##Порядок работы:
 Приложение для тестирования API запускается через консоль Django с использованием manage.py
 
-Команда - _**manage.py runtest <аргумент>**_
+Команда - manage.py runtest <аргумент>
 
 Аргументы команды:
 
-1. _**manage.py runtest help**_ - выводит список аргументов для команды и их описание
+manage.py runtest help - выводит список аргументов для команды и их описание
 
-2. _**manage.py runtest showtests**_ - список всех тестов
+manage.py runtest showtests - список всех тестов
 
-3. **_manage.py runtest <test_name>_** - запускае указанный тест
+manage.py runtest <test_name> - запускае указанный тест
 
-4. _**manage.py runtest runall**_ - запускает все зарегистрированные тесты
+manage.py runtest runall - запускает все зарегистрированные тесты
+
+Аккаунт пользователя:
+
+login - admin
+
+password - admin
+
+Аккаунт для Django admin:
+
+login - AlexTan
+
+password - 1234567
